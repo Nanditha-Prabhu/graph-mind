@@ -9,7 +9,7 @@ export default function Dashboard() {
     <>
      <div className="min-h-screen bg-gray-100 flex">
         <Sidebar />
-        <div className="flex flex-col">
+        <div className="flex flex-col w-full">
           <Header />
         <h1 className=" text-3xl font-bold ml-8 mt-8">Dashboard</h1>
           <div className=" flex flex-col">

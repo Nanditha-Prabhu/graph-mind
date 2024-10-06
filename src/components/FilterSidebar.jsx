@@ -2,7 +2,7 @@ import React from "react";
 
 export default function FilterSidebar() {
   return (
-    <div className=" w-2/12 bg-white shadow-lg p-4 m-8 rounded-lg">
+    <div className=" w-3/12 bg-white shadow-lg p-4 m-8 rounded-lg">
         <h3 className="font-bold text-lg mb-4">Filter by</h3>
         <ul>
           <li className="mb-2">

@@ -12,9 +12,9 @@ function Sidebar() {
   return (
     <>
       {/* Sidebar */}
-      <aside className=" w-3/12 h-auto bg-white shadow-lg p-4 flex flex-col justify-between">
+      <aside className=" w-2/12 h-auto bg-white shadow-lg p-4 flex flex-col justify-between">
         <nav className="mb-6 h-auto">
-          <h2 className="text-2xl font-bold mb-6">GraphMind</h2>
+          <h2 className="text-2xl font-bold mb-6 text-blue-600">GraphMind</h2>
           <ul>
             {navigation.map((item)=>(
             <li className="mb-4">
