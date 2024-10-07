@@ -2,7 +2,7 @@ import React from "react";
 
 export default function InnerSidebar() {
   return (
-    <div className=" w-2/12 bg-white shadow-lg p-4 m-8 rounded-lg">
+    <div className=" w-2/12 bg-white shadow-lg p-4 m-8 rounded-lg h-[35rem]">
       <button className="bg-blue-500 text-white py-2 px-4 rounded w-full focus:shadow-xl focus:font-bold">
         + Add Document
       </button>

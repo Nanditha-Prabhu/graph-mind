@@ -3,7 +3,7 @@ import React from "react";
 export default function History() {
   return (
     <>
-      <div className=" flex flex-col w-auto  shadow-lg m-4  p-4  rounded-lg bg-slate-100">
+      <div className=" flex flex-col w-auto  shadow-lg m-4  p-4  rounded-lg bg-blue-100">
         <h3 className=" font-bold mb-4 text-xl text-blue-500">
           Conversation history
         </h3>

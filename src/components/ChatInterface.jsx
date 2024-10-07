@@ -25,7 +25,7 @@ export default function ChatInterface() {
   );
 
   return (
-    <div className=" flex flex-col w-10/12 bg-white shadow-lg my-8 mr-8 p-4 max-h-full rounded-lg">
+    <div className=" flex flex-col w-10/12 bg-white shadow-lg my-8 mr-8 p-4 rounded-lg h-[35rem]">
       {/* Chat Interface */}
       {/* User Header */}
       <div className="flex justify-between items-center border-b pb-4 mb-4 right ">
@@ -38,8 +38,8 @@ export default function ChatInterface() {
       </div>
 
       {/* Chat Area */}
-      <div className="flex-1 ">
-        <div className="chat-window overflow-y-auto">
+      <div className="flex-1 overflow-y-auto">
+        <div className="chat-window ">
           {/* User Query */}
           <div className="flex justify-end mb-4">
             <div className="bg-blue-100 text-blue-700 py-2 px-4 rounded-xl">
