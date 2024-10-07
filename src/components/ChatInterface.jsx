@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 
 export default function ChatInterface() {
+
+  const handlePrint = () => {
+    setTimeout(() => {
+      window.print(); // Adding a small delay before triggering print
+    }, 100); // 100 milliseconds delay
+  };
+  
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
 
@@ -32,7 +39,7 @@ export default function ChatInterface() {
         <div className="text-lg font-bold">John Doe</div>
         <div className="flex flex-row gap-3">
           <div className="text-gray-600">Star</div>
-          <div className="text-gray-600">Print</div>
+          <button onClick={handlePrint} className="text-gray-600">Print</button>
           <div className="text-gray-600">Delete</div>
         </div>
       </div>
