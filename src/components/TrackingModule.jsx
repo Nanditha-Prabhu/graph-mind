@@ -17,7 +17,7 @@ export default function TrackingModule() {
         <h1 className=" text-3xl font-bold ml-8 mt-8">Tracking Module</h1>
           <div className=" flex flex-row h-full">
             <FilterSidebar />
-            <div className='flex flex-col max-w-[10/12] px-4 pb-4 my-8 mx-auto'>
+            <div className='flex flex-col w-full px-4 pb-4 my-8 mx-auto'>
                 <h4 className='mx-4 mb-2 p-1 w-auto font-medium'>ID: 1001</h4>
                 <SalesAnalytics/>
                 <History/>

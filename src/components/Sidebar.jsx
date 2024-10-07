@@ -33,7 +33,7 @@ function Sidebar() {
         <div className="sticky inset-x-0 bottom-0 border-t border-gray-100 bg-white p-2">
         <a
             href="#"
-            className="t group relative flex justify-start items-center rounded hover:bg-blue-50 px-2 py-1.5 text-blue-500 hover:text-blue-700"
+            className=" group relative flex justify-start items-center rounded hover:bg-blue-50 px-2 py-1.5 text-blue-500 hover:text-blue-700"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
