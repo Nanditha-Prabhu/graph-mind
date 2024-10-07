@@ -1,15 +1,31 @@
 import React, { useState } from "react";
+import { FaPrint } from "react-icons/fa";
+import { FaMicrophone } from "react-icons/fa";
+import { GrAttachment } from "react-icons/gr";
+import { FaStar } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 
 export default function ChatInterface() {
-
   const handlePrint = () => {
     setTimeout(() => {
       window.print(); // Adding a small delay before triggering print
     }, 100); // 100 milliseconds delay
   };
-  
+
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
+  const [star, setStar] = useState(false);
+
+  const handleStar = () => {
+    console.log(star);
+    if (!star) {
+      setStar(true);
+      console.log(star);
+    } else {
+      setStar(false);
+      console.log(star);
+    }
+  };
 
   const handleSendMessage = () => {
     if (input.trim() === "") return;
@@ -38,9 +54,22 @@ export default function ChatInterface() {
       <div className="flex justify-between items-center border-b pb-4 mb-4 right ">
         <div className="text-lg font-bold">John Doe</div>
         <div className="flex flex-row gap-3">
-          <div className="text-gray-600">Star</div>
-          <button onClick={handlePrint} className="text-gray-600">Print</button>
-          <div className="text-gray-600">Delete</div>
+          <button onClick={handlePrint} className="text-gray-600 p-2 border">
+            <FaPrint />
+          </button>
+          <button
+            onClick={handleStar}
+            className={
+              star
+                ? "text-yellow-400 text-xl p-2 border"
+                : "text-gray-600 text-xl p-2 border"
+            }
+          >
+            <FaStar />
+          </button>
+          <div className="text-gray-600 text-xl p-2 border">
+            <MdDelete />
+          </div>
         </div>
       </div>
 
@@ -48,21 +77,21 @@ export default function ChatInterface() {
       <div className="flex-1 overflow-y-auto">
         <div className="chat-window ">
           {/* User Query */}
-          <div className="flex justify-end mb-4">
+          {/* <div className="flex justify-end mb-4">
             <div className="bg-blue-100 text-blue-700 py-2 px-4 rounded-xl">
               What should be our next market expansion strategy?
             </div>
-          </div>
+          </div> */}
 
           {/* AI Response */}
-          <div className="flex justify-start">
+          {/* <div className="flex justify-start">
             <div className="bg-gray-100 text-gray-700 py-2 px-4 rounded-xl w-3/4">
               {queryResponse}
               <div className="mt-2 text-blue-500 text-sm cursor-pointer">
                 View Data Source
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Messages*/}
           {messages.map((message, index) => (
@@ -74,10 +103,19 @@ export default function ChatInterface() {
             >
               <div
                 className={`max-w-xs p-3 rounded-lg  ${
-                  message.sender === "user" ? "bg-blue-100 text-blue-700" : "bg-gray-100 text-gray-700"
+                  message.sender === "user"
+                    ? "bg-blue-100 text-blue-700"
+                    : "bg-gray-100 text-gray-700"
                 }`}
               >
                 {message.text}
+              {message.sender != "user" ? (
+                <div className="mt-2 text-blue-500 text-sm cursor-pointer">
+                  View Data Source
+                </div>
+              ) : (
+                <p></p>
+              )}
               </div>
             </div>
           ))}
@@ -87,17 +125,26 @@ export default function ChatInterface() {
       {/* Input Area */}
       <div className="sticky inset-x-0 bottom-0">
         <div className=" flex">
+          <div className="bg-blue-500 text-white items-center justify-center p-3 rounded-l-lg">
+            <FaMicrophone />
+          </div>
           <input
             type="text"
             placeholder="Write message..."
-            className="w-full border rounded-l-lg py-2 px-4 focus:outline-none focus:border-2 focus:border-blue-300"
+            className="w-full border py-2 px-4 focus:outline-none "
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyUp={(e) => {
-          if (e.key === 'Enter') handleSendMessage();
-        }}
+              if (e.key === "Enter") handleSendMessage();
+            }}
           />
-          <button onClick={handleSendMessage} className="bg-blue-500 text-white w-40 py-2 px-3 rounded-r-lg">
+          <div className="p-3 text-gray-500 border">
+            <GrAttachment />
+          </div>
+          <button
+            onClick={handleSendMessage}
+            className="bg-blue-500 text-white w-40 py-2 px-3 rounded-r-lg"
+          >
             Send &#11166;
           </button>
         </div>
